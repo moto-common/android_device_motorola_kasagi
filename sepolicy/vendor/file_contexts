@@ -1,0 +1,6 @@
+# Popup
+/sys/devices/platform/soc/soc\:moto_aw8646_support/(/.*)? u:object_r:sysfs_popup:s0
+/sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/(/.*)? u:object_r:sysfs_popup:s0   
+
+# Motor HAL
+/vendor/bin/hw/motorola\.hardware\.popup@1\.0-service u:object_r:hal_motpopup_default_exec:s0
