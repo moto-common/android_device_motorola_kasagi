@@ -12,64 +12,34 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Boot Header
-BOARD_BOOT_HEADER_VERSION := 3
-
-# PlatformConfig
+# Platform Config
 include device/motorola/sm6150-common/PlatformConfig.mk
 
-# Kernel
-TARGET_PREBUILT_KERNEL := device/motorola/sm6150-common/sm6150-moto-Image.gz
-
-TARGET_BOOTLOADER_BOARD_NAME := hanoip
+# Device Path
+DEVICE_PATH := device/motorola/kasagi
 
 # Platform
 PRODUCT_PLATFORM := sm6150
 
-# Kernel DTB/DTBO
-BOARD_PREBUILT_DTBIMAGE_DIR := device/motorola/sm6150-common-kernel/dtb
-BOARD_PREBUILT_DTBOIMAGE := device/motorola/sm6150-common-kernel/dtbo.img
-
-# Kernel Modules
-BOARD_VENDOR_KERNEL_MODULES := \
-    $(wildcard device/motorola/sm6150-common-kernel/modules/*.ko)
+# Boot Header
+BOARD_BOOT_HEADER_VERSION := 2
 
 # Partition information
-BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
-BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
-BOARD_DTBOIMG_PARTITION_SIZE := 8388608
-BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := $(BOARD_BOOTIMAGE_PARTITION_SIZE)
-
-BOARD_SUPER_PARTITION_SIZE := 10804527104
+BOARD_SUPER_PARTITION_SIZE := 9730785280
 BOARD_SUPER_PARTITION_GROUPS := mot_dynamic_partitions
 
-# Set error limit to SUPER_PARTITION_SIZE - 500MiB
-BOARD_SUPER_PARTITION_ERROR_LIMIT := 10300162048
-
 # DYNAMIC_PARTITIONS_SIZE = (SUPER_PARTITION_SIZE / 2) - 4MB
-BOARD_MOT_DYNAMIC_PARTITIONS_SIZE := 6169821184
+BOARD_MOT_DYNAMIC_PARTITIONS_SIZE := 4861198336
 BOARD_MOT_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     system \
-    system_ext \
     product \
     vendor
 
-# Slightly overprovision dynamic partitions with 50MiB to
-# allow on-device file editing
-BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 52428800
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 52428800
-BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 52428800
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 52428800
+# Recovery
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 
-# Reserve space for data encryption (239541551104-16384)
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 14919106048
+# VINTF (Camera)
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/vintf/motorola.hardware.popup_v1.0.xml
 
-# Build system_ext image
-TARGET_COPY_OUT_SYSTEM_EXT := system_ext
-BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_SYSTEM_EXTIMAGE_JOURNAL_SIZE := 0
-BOARD_SYSTEM_EXTIMAGE_EXTFS_INODE_COUNT := 4096
-
-# This target has no recovery partition
-BOARD_USES_RECOVERY_AS_BOOT := true
-TARGET_NO_RECOVERY := true
+# SEPolicy
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy

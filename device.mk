@@ -13,31 +13,27 @@
 # limitations under the License.
 
 # Device path
-DEVICE_PATH := device/motorola/hanoip/rootdir
+DEVICE_PATH := device/motorola/kasagi/rootdir
 
 DEVICE_PACKAGE_OVERLAYS += \
-    device/motorola/hanoip/overlay
+    device/motorola/kasagi/overlay
 
 # Kernel
 PRODUCT_COPY_FILES += \
-    device/motorola/sm6150-common-kernel/sm6150-moto-Image.gz:kernel
+    device/motorola/kasagi-kernel/Image.gz:kernel
 
 # Audio Configuration
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor/etc/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
+    $(DEVICE_PATH)/vendor/etc/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
     $(DEVICE_PATH)/vendor/etc/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     $(DEVICE_PATH)/vendor/etc/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 # Device Init
 PRODUCT_PACKAGES += \
-    fstab.hanoip \
-    vendor-fstab.hanoip \
+    fstab.kasagi \
+    ramdisk-fstab.kasagi \
     init.recovery.qcom.rc
-
-# AB Partitions
-AB_OTA_PARTITIONS += \
-    vendor_boot \
-    system_ext
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
@@ -46,12 +42,19 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.sf.lcd_density=400
 
+# VBMeta
+TARGET_HAS_VBMETA_SYSTEM := false
+
 # Fingerprint
-TARGET_USES_CHIPONE_FINGERPRINT := true
-TARGET_USES_FPC_FINGERPRINT := true
+TARGET_USES_EGISTEC_FINGERPRINT := true
+TARGET_USES_GOODIX_FINGERPRINT := true
+
+# Media
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/vendor/etc/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/sm6150-common/platform.mk)
 
 # include board vendor blobs
-$(call inherit-product-if-exists, vendor/motorola/hanoip/hanoip-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/kasagi/kasagi-vendor.mk)

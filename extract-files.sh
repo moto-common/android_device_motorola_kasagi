@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=hanoip
+DEVICE=kasagi
 VENDOR=motorola
 
 # Load extract utilities and do some sanity checks.
