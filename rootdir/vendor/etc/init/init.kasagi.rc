@@ -1,0 +1,29 @@
+on init
+   # Change ownership and permission for popup device.
+   # Put them in "on boot" can cause the initialization of Popup Hal to fail.
+   chown system system /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/enable
+   chown system system /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/dir
+   chown system system /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/mode
+   chown system system /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/torque
+   chown system system /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/step
+   chown system system /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/ceiling
+   chown system system /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/position
+   chmod 0664 /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/enable
+   chmod 0664 /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/dir
+   chmod 0664 /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/mode
+   chmod 0664 /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/torque
+   chmod 0664 /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/step
+   chmod 0664 /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/ceiling
+   chmod 0664 /sys/devices/platform/soc/soc\:moto_aw8646_support/aw8646/control/position
+   chown system system /sys/devices/platform/soc/88c000.i2c/i2c-2/2-000c/mxm1120_top/control/delay
+   chown system system /sys/devices/platform/soc/88c000.i2c/i2c-2/2-000c/mxm1120_top/control/enable
+   chown system system /sys/devices/platform/soc/88c000.i2c/i2c-2/2-000c/mxm1120_top/control/rawdata
+   chown system system /sys/devices/platform/soc/88c000.i2c/i2c-2/2-000f/mxm1120_bottom/control/delay
+   chown system system /sys/devices/platform/soc/88c000.i2c/i2c-2/2-000f/mxm1120_bottom/control/enable
+   chown system system /sys/devices/platform/soc/88c000.i2c/i2c-2/2-000f/mxm1120_bottom/control/rawdata
+   chmod 0664 /sys/devices/platform/soc/88c000.i2c/i2c-2/2-000c/mxm1120_top/control/delay
+   chmod 0664 /sys/devices/platform/soc/88c000.i2c/i2c-2/2-000c/mxm1120_top/control/enable
+   chmod 0664 /sys/devices/platform/soc/88c000.i2c/i2c-2/2-000c/mxm1120_top/control/rawdata
+   chmod 0664 /sys/devices/platform/soc/88c000.i2c/i2c-2/2-000f/mxm1120_bottom/control/delay
+   chmod 0664 /sys/devices/platform/soc/88c000.i2c/i2c-2/2-000f/mxm1120_bottom/control/enable
+   chmod 0664 /sys/devices/platform/soc/88c000.i2c/i2c-2/2-000f/mxm1120_bottom/control/rawdata

@@ -30,6 +30,9 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor/etc/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 # Device Init
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/vendor/etc/init/init.kasagi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.kasagi.rc
+
 PRODUCT_PACKAGES += \
     fstab.kasagi \
     ramdisk-fstab.kasagi \
