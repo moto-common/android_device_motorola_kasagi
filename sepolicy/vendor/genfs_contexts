@@ -1,0 +1,6 @@
+# Power Supply
+genfscon sysfs /devices/platform/soc/88c000.i2c/i2c-2/2-0055/power_supply/bq27426_bms u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/soc/88c000.i2c/i2c-2/2-0065/power_supply/bq2597x-master u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/soc/88c000.i2c/i2c-2/2-0066/power_supply/bq2597x-slave u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/soc/soc:mmi_chrg_manager/power_supply/battery u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/soc/soc:mmi_chrg_manager/power_supply/mmi_chrg_manager u:object_r:sysfs_batteryinfo:s0
