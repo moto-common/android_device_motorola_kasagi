@@ -124,6 +124,18 @@ vendor/lib64/motorola.hardware.popup@1.0.so
 vendor/etc/qdcm_calib_data_mipi_mot_vid_focal_1080p_653.xml
 vendor/etc/qdcm_calib_data_mipi_mot_vid_nova_1080p_653.xml
 
+# Fingerprint
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-ets
+vendor/etc/init/init.ets.rc
+vendor/lib/libets_fp_et5.so
+vendor/lib/libets_teeclient.so
+vendor/lib/vendor.egistec.hardware.fingerprint@2.0.so
+vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib64/libets_fp_et5.so
+vendor/lib64/libets_teeclient.so
+vendor/lib64/vendor.egistec.hardware.fingerprint@2.0.so
+vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
+
 # Firmware
 vendor/firmware/aw8695_haptic.bin
 vendor/firmware/aw8695_rtp.bin
