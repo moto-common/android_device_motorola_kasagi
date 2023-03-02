@@ -13,16 +13,11 @@
 # limitations under the License.
 
 # Platform Config
+PRODUCT_PLATFORM := sm6150
 include device/motorola/sm6150-common/PlatformConfig.mk
 
 # Device Path
 DEVICE_PATH := device/motorola/kasagi
-
-# Platform
-PRODUCT_PLATFORM := sm6150
-
-# Boot Header
-BOARD_BOOT_HEADER_VERSION := 2
 
 # Partition information
 BOARD_SUPER_PARTITION_SIZE := 9730785280
@@ -38,8 +33,8 @@ BOARD_MOT_DYNAMIC_PARTITIONS_PARTITION_LIST := \
 # Recovery
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 
-# VINTF (Camera)
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/vintf/motorola.hardware.popup_v1.0.xml
-
 # SEPolicy
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
+# VINTF (Camera)
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/vintf/motorola.hardware.popup_v1.0.xml
