@@ -15,10 +15,6 @@
 # Device path
 DEVICE_PATH := device/motorola/kasagi/rootdir
 
-# Kernel
-PRODUCT_COPY_FILES += \
-    device/motorola/kasagi-kernel/Image.gz:kernel
-
 # Audio Configuration
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor/etc/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
