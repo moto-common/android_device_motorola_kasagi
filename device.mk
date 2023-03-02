@@ -27,8 +27,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor/etc/init/init.kasagi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.kasagi.rc
 
 PRODUCT_PACKAGES += \
-    fstab.kasagi \
-    ramdisk-fstab.kasagi \
+    fstab.qcom.ramdisk \
     init.recovery.qcom.rc
 
 PRODUCT_AAPT_CONFIG := normal
