@@ -15,9 +15,6 @@
 # Device path
 DEVICE_PATH := device/motorola/kasagi/rootdir
 
-DEVICE_PACKAGE_OVERLAYS += \
-    device/motorola/kasagi/overlay
-
 # Kernel
 PRODUCT_COPY_FILES += \
     device/motorola/kasagi-kernel/Image.gz:kernel
