@@ -29,6 +29,9 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 TARGET_USES_EGISTEC_FINGERPRINT := true
 
+# Model
+PRODUCT_MODEL := motorola one hyper
+
 # VBMeta
 TARGET_HAS_VBMETA_SYSTEM := false
 
