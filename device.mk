@@ -23,9 +23,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.sf.lcd_density=400
 
-PRODUCT_PACKAGES += \
-    fstab.qcom.ramdisk
-
 # Fingerprint
 TARGET_USES_EGISTEC_FINGERPRINT := true
 
